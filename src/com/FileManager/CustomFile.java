@@ -33,13 +33,12 @@ public class CustomFile implements Comparable<CustomFile> {
         if (fileName.contains("+")) {
             relevantPart = fileName.split("\\+")[0];
         }
-        return relevantPart;
+        return relevantPart != " " ? relevantPart : "SomeWeirdStuff" ;
     }
 
     @Override
     public int compareTo(CustomFile customFile) {
-        int i = getRelevantPart().toLowerCase().compareTo(customFile.getRelevantPart().toLowerCase());
-        return i;
+        return getRelevantPart().toLowerCase().compareTo(customFile.getRelevantPart().toLowerCase());
     }
 
 
